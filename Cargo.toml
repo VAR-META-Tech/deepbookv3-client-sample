@@ -1,0 +1,20 @@
+[package]
+name = "deepbook-client"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+deepbookv3 = { git = "https://github.com/VAR-META-Tech/deepbookv3" }
+sui_sdk = { git = "https://github.com/mystenlabs/sui", package = "sui-sdk" }
+sui-keys = { git = "https://github.com/mystenlabs/sui", package = "sui-keys" }
+sui-config = { git = "https://github.com/mystenlabs/sui", package = "sui-config" }
+shared-crypto = { git = "https://github.com/mystenlabs/sui", package = "shared-crypto" }
+sui-types = { git = "https://github.com/mystenlabs/sui", package = "sui-types" }
+tokio = { version = "1.2", features = ["full"] }
+anyhow = "1.0"
+bcs = "0.1.4"
+serde = "1.0"
+serde_derive = "1.0"
+
+[dev-dependencies]
+serial_test = "0.9"
