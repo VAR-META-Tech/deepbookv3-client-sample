@@ -119,10 +119,10 @@ async fn main() -> Result<(), anyhow::Error> {
         .swap_exact_base_for_quote(
             &mut ptb,
             &SwapParams {
-                pool_key: "DEEP_SUI".to_string(),
-                amount: 50.0,     // Quote amount (e.g., DBUSDT)
+                pool_key: "SUI_USDC".to_string(),
+                amount: 1.0,      // Quote amount (e.g., DBUSDT)
                 deep_amount: 5.0, // DEEP tokens burned
-                min_out: 1.0,     // Expected min base out (e.g., SUI)
+                min_out: 0.1,     // Expected min base out (e.g., SUI)
             },
         )
         .await?;
@@ -143,7 +143,7 @@ async fn main() -> Result<(), anyhow::Error> {
         .map(|coin| (coin.coin_object_id, coin.version, coin.digest))
         .collect();
 
-    let gas_budget = 5_000_000;
+    let gas_budget = 50_000_000;
     let gas_price = client.read_api().get_reference_gas_price().await?;
     let pt = ptb.finish();
 
